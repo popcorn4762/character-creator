@@ -1,6 +1,22 @@
 body {
   background-color: rgb(100, 121, 112);
 }
+img {
+  width: 250px;
+  height: auto;
+}
+.traits {
+  position:absolute;
+  left: 90px;
+  top:70px;
+}
+#eye {
+  width:30px;
+}
+#characterDiv {
+  background-color: red;
+  position:relative;
+}
 #interfaceDiv {
   display:flex;
   justify-content: center;
