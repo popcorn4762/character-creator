@@ -7,15 +7,14 @@ img {
 }
 .traits {
   position:absolute;
-  left: 90px;
-  top:70px;
+  left: 0px;
+  top:0px;
 }
 #eye {
-  width:30px;
+  width:250px;
 }
 #characterDiv {
-  background-color: red;
-  position:relative;
+ position:relative;
 }
 #interfaceDiv {
   display:flex;
