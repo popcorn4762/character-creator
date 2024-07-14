@@ -12,6 +12,8 @@ let rightShirt = document.querySelector('#rightShirt');
 let blonde = document.querySelector('#blonde');
 let brown = document.querySelector('#brown');
 let black = document.querySelector('#black');
+let leftHair = document.querySelector('#leftHair');
+let rightHair = document.querySelector('#rightHair');
 function render(skin) {
   if(skin==0){
     skinTone.src = "./assets/body/skin1.PNG"
@@ -114,31 +116,51 @@ function renderPant(pantCounter) {
   function renderHair(hairCounter) {
     if(hairCounter==0){
       if(hairColor==0){
-      hair.src = "./assets/front/s1c0.PNG"
+        front.src = "./assets/front/s1c0.PNG"
     }
-    if(hairColor==1){
-      hair.src = "./assets/front/s1c0.PNG"
+    else if(hairColor==1){
+      front.src = "./assets/front/s1c1.PNG"
     }
-    if(hairColor==2){
-      hair.src = "./assets/front/s1c0.PNG"
+    else if(hairColor==2){
+      front.src = "./assets/front/s1c2.PNG"
+      console.log ('hi')
     }
   }
     else if(hairCounter==1){
       if(hairColor==0){
-        hair.src = "./assets/front/s1c0.PNG"
+        front.src = "./assets/front/s2c0.PNG"
+      }
+      if(hairColor==1){
+        front.src = "./assets/front/s2c1.PNG"
+      }
+      if(hairColor==2){
+        front.src = "./assets/front/s2c2.PNG"
       }
     }
     else if(hairCounter==2){
       if(hairColor==0){
-        hair.src = "./assets/front/s1c0.PNG"
+        front.src = "./assets/front/s3c0.PNG"
       }
+      if(hairColor==1){
+        front.src = "./assets/front/s3c1.PNG"
+      }
+      if(hairColor==2){
+        front.src = "./assets/front/s3c2.PNG"
     }
+  }
     else if(hairCounter==3){
       if(hairColor==0){
-        hair.src = "./assets/front/s1c0.PNG"
+        front.src = "./assets/front/s4c0.PNG"
+      }
+      if(hairColor==1){
+        front.src = "./assets/front/s4c1.PNG"
+      }
+      if(hairColor==2){
+        front.src = "./assets/front/s4c2.PNG"
       }
     }
   }
+
 let mouthCounter= 0
 let eyelashCounter=0
 let shirtCounter=0
@@ -147,15 +169,6 @@ let skin=0;
 let pantCounter=0
 let hairColor=0
 let hairCounter=0
-blonde.addEventListener("click",function(){
-  hairColor=0
-})
-brown.addEventListener("click",function(){
-  hairColor=1
-})
-black.addEventListener("click",function(){
-  hairColor=2
-})
 leftButton.addEventListener("click",function(){
   if(skin<1){
     skin=4
@@ -265,6 +278,35 @@ rightPant.addEventListener("click",function(){
   }  
   renderPant(pantCounter)
 })
-
-  
-
+blonde.addEventListener("click",function(){ 
+  hairColor=0
+ renderHair(hairCounter)
+})
+brown.addEventListener("click",function(){
+  hairColor=1
+  renderHair(hairCounter)
+ })
+ black.addEventListener("click",function(){
+  hairColor=2
+  renderHair(hairCounter)
+ })
+ leftHair.addEventListener("click",function(){
+  if(hairCounter<1){
+  hairCounter=3
+  renderHair(hairCounter)
+}
+else {
+  hairCounter--
+  renderHair(hairCounter)
+}  
+ })
+ rightHair.addEventListener("click",function(){
+  if(hairCounter>2){
+  hairCounter=0
+  renderHair(hairCounter)
+}
+else {
+  hairCounter++
+  renderHair(hairCounter)
+}  
+ })
