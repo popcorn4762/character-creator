@@ -9,6 +9,9 @@ let leftEye = document.querySelector('#leftEye');
 let rightEye = document.querySelector('#rightEye');
 let leftShirt = document.querySelector('#leftShirt');
 let rightShirt = document.querySelector('#rightShirt');
+let blonde = document.querySelector('#blonde');
+let brown = document.querySelector('#brown');
+let black = document.querySelector('#black');
 function render(skin) {
   if(skin==0){
     skinTone.src = "./assets/body/skin1.PNG"
@@ -108,16 +111,54 @@ function renderPant(pantCounter) {
     pant.src = "./assets/pants/pant6.PNG"
   }
   }
+  function renderHair(hairCounter) {
+    if(hairCounter==0){
+      if(hairColor==0){
+      hair.src = "./assets/front/s1c0.PNG"
+    }
+    if(hairColor==1){
+      hair.src = "./assets/front/s1c0.PNG"
+    }
+    if(hairColor==2){
+      hair.src = "./assets/front/s1c0.PNG"
+    }
+  }
+    else if(hairCounter==1){
+      if(hairColor==0){
+        hair.src = "./assets/front/s1c0.PNG"
+      }
+    }
+    else if(hairCounter==2){
+      if(hairColor==0){
+        hair.src = "./assets/front/s1c0.PNG"
+      }
+    }
+    else if(hairCounter==3){
+      if(hairColor==0){
+        hair.src = "./assets/front/s1c0.PNG"
+      }
+    }
+  }
 let mouthCounter= 0
 let eyelashCounter=0
 let shirtCounter=0
 let eyeCounter=0
 let skin=0;
 let pantCounter=0
-
+let hairColor=0
+let hairCounter=0
+blonde.addEventListener("click",function(){
+  hairColor=0
+})
+brown.addEventListener("click",function(){
+  hairColor=1
+})
+black.addEventListener("click",function(){
+  hairColor=2
+})
 leftButton.addEventListener("click",function(){
   if(skin<1){
-    skin=5
+    skin=4
   }
   else {
     skin--
@@ -136,7 +177,7 @@ rightButton.addEventListener("click",function(){
 })
 leftEye.addEventListener("click",function(){
   if(eyeCounter<1){
-    eyeCounter=0
+    eyeCounter=4
   }
   else {
     eyeCounter--
@@ -154,7 +195,7 @@ rightEye.addEventListener("click",function(){
 })
 leftShirt.addEventListener("click",function(){
   if(shirtCounter<1){
-    shirtCounter=0
+    shirtCounter=6
   }
   else {
     shirtCounter--
@@ -172,7 +213,7 @@ rightShirt.addEventListener("click",function(){
 })
 leftEyelash.addEventListener("click",function(){
   if(eyelashCounter<1){
-    eyelashCounter=0
+    eyelashCounter=2
   }
   else {
     eyelashCounter--
@@ -190,7 +231,7 @@ rightEyelash.addEventListener("click",function(){
 })
 leftMouth.addEventListener("click",function(){
   if(mouthCounter<1){
-    mouthCounter=0
+    mouthCounter=2
   }
   else {
     mouthhCounter--
@@ -208,7 +249,7 @@ rightMouth.addEventListener("click",function(){
 })
 leftPant.addEventListener("click",function(){
   if(pantCounter<1){
-    pantCounter=0
+    pantCounter=5
   }
   else {
     pantCounter--
