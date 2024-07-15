@@ -54,3 +54,6 @@ button{
 .hair {
   width: 100px;
 }
+#back {
+  z-index: -1;
+}

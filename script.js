@@ -160,7 +160,54 @@ function renderPant(pantCounter) {
       }
     }
   }
-
+  function renderBackHair(backCounter) {
+    if(backCounter==0){
+      if(hairColor==0){
+        back.src = "./assets/back/s1c0.PNG"
+    }
+    else if(hairColor==1){
+      back.src = "./assets/back/s1c1.PNG"
+    }
+    else if(hairColor==2){
+      back.src = "./assets/back/s1c2.PNG"
+      console.log ('hi')
+    }
+  }
+    else if(backCounter==1){
+      if(hairColor==0){
+        back.src = "./assets/back/s2c0.PNG"
+      }
+      if(hairColor==1){
+        back.src = "./assets/back/s2c1.PNG"
+      }
+      if(hairColor==2){
+        back.src = "./assets/back/s2c2.PNG"
+      }
+    }
+    else if(backCounter==2){
+      if(hairColor==0){
+        back.src = "./assets/back/s3c0.PNG"
+      }
+      if(hairColor==1){
+        back.src = "./assets/back/s3c1.PNG"
+      }
+      if(hairColor==2){
+        back.src = "./assets/back/s3c2.PNG"
+    }
+  }
+    else if(backCounter==3){
+      if(hairColor==0){
+        back.src = "./assets/back/s4c0.PNG"
+      }
+      if(hairColor==1){
+        back.src = "./assets/back/s4c1.PNG"
+      }
+      if(hairColor==2){
+        back.src = "./assets/back/s4c2.PNG"
+      }
+    }
+  }
+let backCounter=0
 let mouthCounter= 0
 let eyelashCounter=0
 let shirtCounter=0
@@ -281,14 +328,17 @@ rightPant.addEventListener("click",function(){
 blonde.addEventListener("click",function(){ 
   hairColor=0
  renderHair(hairCounter)
+ renderBackHair(backCounter)
 })
 brown.addEventListener("click",function(){
   hairColor=1
   renderHair(hairCounter)
+  renderBackHair(backCounter)
  })
  black.addEventListener("click",function(){
   hairColor=2
   renderHair(hairCounter)
+  renderBackHair(backCounter)
  })
  leftHair.addEventListener("click",function(){
   if(hairCounter<1){
@@ -308,5 +358,25 @@ else {
 else {
   hairCounter++
   renderHair(hairCounter)
+}  
+ })
+ leftBackHair.addEventListener("click",function(){
+  if(backCounter<1){
+    backCounter=3
+  renderBackHair(backCounter)
+}
+else {
+  backCounter--
+  renderBackHair(backCounter)
+}  
+ })
+ rightBackHair.addEventListener("click",function(){
+  if(backCounter>2){
+    backCounter=0
+  renderBackHair(backCounter)
+}
+else {
+  backCounter++
+  renderBackHair(backCounter)
 }  
  })
