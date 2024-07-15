@@ -12,8 +12,10 @@ let rightShirt = document.querySelector('#rightShirt');
 let blonde = document.querySelector('#blonde');
 let brown = document.querySelector('#brown');
 let black = document.querySelector('#black');
-let leftHair = document.querySelector('#leftHair');
-let rightHair = document.querySelector('#rightHair');
+
+/*let leftHair = document.querySelector('#leftHair');
+let rightHair = document.querySelector('#rightHair')*/
+
 function render(skin) {
   if(skin==0){
     skinTone.src = "./assets/body/skin1.PNG"
