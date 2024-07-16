@@ -110,6 +110,12 @@ function renderShirt(shirtCounter) {
   else if(shirtCounter==8){
     shirt.src = "./assets/clothes/shirt9.PNG"
   }
+  else if(shirtCounter==9){
+    shirt.src = "./assets/clothes/shirt10.PNG"
+  }
+  else if(shirtCounter==10){
+    shirt.src = "./assets/clothes/shirt11.PNG"
+  }
 }
 function renderPant(pantCounter) {
   if(pantCounter==0){
@@ -372,7 +378,7 @@ rightEye.addEventListener("click",function(){
 })
 leftShirt.addEventListener("click",function(){
   if(shirtCounter<1){
-    shirtCounter=8
+    shirtCounter=10
   }
   else {
     shirtCounter--
@@ -380,7 +386,7 @@ leftShirt.addEventListener("click",function(){
   renderShirt(shirtCounter)
 })
 rightShirt.addEventListener("click",function(){
-  if(shirtCounter>7){
+  if(shirtCounter>9){
     shirtCounter=0
   }
   else {
