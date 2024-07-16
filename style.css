@@ -27,6 +27,7 @@ img {
 button{
   padding: 6px;
   font-family:'poppins';
+  border-radius: 10px;
 }
 #blonde {
   background-color: rgb(220, 216, 166);

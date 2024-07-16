@@ -14,6 +14,7 @@ let brown = document.querySelector('#brown');
 let black = document.querySelector('#black');
 let leftHair = document.querySelector('#leftHair');
 let rightHair = document.querySelector('#rightHair')
+let sock = document.querySelector('#socks');
 function render(skin) {
   if(skin==0){
     skinTone.src = "./assets/body/skin1.PNG"
@@ -57,6 +58,17 @@ function renderEye(eyeCounter) {
   }
   else if(eyeCounter==4){
     eye.src = "./assets/eye/pink.PNG"
+  }
+}
+function renderSock(sockCounter) {
+  if(sockCounter==0){
+    sock.src = "./assets/socks/sock1.PNG"
+  }
+  else if(sockCounter==1){
+    sock.src = "./assets/socks/sock2.PNG"
+  }
+  else if(sockCounter==2){
+    sock.src = "./assets/socks/sock3.PNG"
   }
 }
 function renderMouth(mouthCounter) {
@@ -166,6 +178,17 @@ function renderPant(pantCounter) {
       }
       if(hairColor==2){
         front.src = "./assets/front/s4c2.PNG"
+      }
+    }
+    else if(hairCounter==4){
+      if(hairColor==0){
+        front.src = "./assets/front/s5c0.PNG"
+      }
+      if(hairColor==1){
+        front.src = "./assets/front/s5c1.PNG"
+      }
+      if(hairColor==2){
+        front.src = "./assets/front/s5c2.PNG"
       }
     }
   }
@@ -309,6 +332,7 @@ let pantCounter=0
 let hairColor=0
 let hairCounter=0
 let shoeCounter=0
+let sockCounter= 0
 leftButton.addEventListener("click",function(){
   if(skin<1){
     skin=4
@@ -435,7 +459,7 @@ brown.addEventListener("click",function(){
  })
  leftHair.addEventListener("click",function(){
   if(hairCounter<1){
-  hairCounter=3
+  hairCounter=4
   renderHair(hairCounter)
 }
 else {
@@ -444,7 +468,7 @@ else {
 }  
  })
  rightHair.addEventListener("click",function(){
-  if(hairCounter>2){
+  if(hairCounter>3){
   hairCounter=0
   renderHair(hairCounter)
 }
@@ -493,3 +517,22 @@ else {
   renderShoe(shoeCounter)
 }  
  })
+ leftSock.addEventListener("click",function(){
+  if(sockCounter<1){
+    sockCounter=2
+  }
+  else {
+    sockCounter--
+    console.log('hi')
+  }  
+  renderSock(sockCounter)
+})
+rightSock.addEventListener("click",function(){
+  if(sockCounter>1){
+    sockCounter=0
+  }
+  else {
+    sockCounter++
+  }  
+  renderSock(sockCounter)
+})
