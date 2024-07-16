@@ -12,10 +12,8 @@ let rightShirt = document.querySelector('#rightShirt');
 let blonde = document.querySelector('#blonde');
 let brown = document.querySelector('#brown');
 let black = document.querySelector('#black');
-
-/*let leftHair = document.querySelector('#leftHair');
-let rightHair = document.querySelector('#rightHair')*/
-
+let leftHair = document.querySelector('#leftHair');
+let rightHair = document.querySelector('#rightHair')
 function render(skin) {
   if(skin==0){
     skinTone.src = "./assets/body/skin1.PNG"
@@ -94,6 +92,12 @@ function renderShirt(shirtCounter) {
   else if(shirtCounter==6){
     shirt.src = "./assets/clothes/shirt7.PNG"
   }
+  else if(shirtCounter==7){
+    shirt.src = "./assets/clothes/shirt8.PNG"
+  }
+  else if(shirtCounter==8){
+    shirt.src = "./assets/clothes/shirt9.PNG"
+  }
 }
 function renderPant(pantCounter) {
   if(pantCounter==0){
@@ -113,6 +117,9 @@ function renderPant(pantCounter) {
   }
   else if(pantCounter==5){
     pant.src = "./assets/pants/pant6.PNG"
+  }
+  else if(pantCounter==6){
+    pant.src = "./assets/pants/pant7.PNG"
   }
   }
   function renderHair(hairCounter) {
@@ -208,6 +215,89 @@ function renderPant(pantCounter) {
         back.src = "./assets/back/s4c2.PNG"
       }
     }
+    else if(backCounter==4){
+      if(hairColor==0){
+        back.src = "./assets/back/s5c0.PNG"
+      }
+      if(hairColor==1){
+        back.src = "./assets/back/s5c1.PNG"
+      }
+      if(hairColor==2){
+        back.src = "./assets/back/s5c2.PNG"
+      }
+    }
+    else if(backCounter==5){
+      if(hairColor==0){
+        back.src = "./assets/back/s6c0.PNG"
+      }
+      if(hairColor==1){
+        back.src = "./assets/back/s6c1.PNG"
+      }
+      if(hairColor==2){
+        back.src = "./assets/back/s6c2.PNG"
+      }
+    }
+    else if(backCounter==6){
+      if(hairColor==0){
+        back.src = "./assets/back/s7c0.PNG"
+      }
+      if(hairColor==1){
+        back.src = "./assets/back/s7c1.PNG"
+      }
+      if(hairColor==2){
+        back.src = "./assets/back/s7c2.PNG"
+      }
+    }
+    else if(backCounter==7){
+      if(hairColor==0){
+        back.src = "./assets/back/s8c0.PNG"
+      }
+      if(hairColor==1){
+        back.src = "./assets/back/s8c1.PNG"
+      }
+      if(hairColor==2){
+        back.src = "./assets/back/s8c2.PNG"
+      }
+    }
+    else if(backCounter==8){
+      if(hairColor==0){
+        back.src = "./assets/back/s9c0.PNG"
+      }
+      if(hairColor==1){
+        back.src = "./assets/back/s9c1.PNG"
+      }
+      if(hairColor==2){
+        back.src = "./assets/back/s9c2.PNG"
+      }
+    }
+    else if(backCounter==9){
+      if(hairColor==0){
+        back.src = "./assets/back/s10c0.PNG"
+      }
+      if(hairColor==1){
+        back.src = "./assets/back/s10c1.PNG"
+      }
+      if(hairColor==2){
+        back.src = "./assets/back/s10c2.PNG"
+      }
+}
+  }
+  function renderShoe(shoeCounter) {
+    if(shoeCounter==0){
+      shoe.src = "./assets/shoes/shoe1.PNG"
+    }
+    else if(shoeCounter==1){
+      shoe.src = "./assets/shoes/shoe2.PNG"
+    }
+    else if(shoeCounter==2){
+      shoe.src = "./assets/shoes/shoe3.PNG"
+    }
+    else if(shoeCounter==3){
+      shoe.src = "./assets/shoes/shoe4.PNG"
+    }
+    else if(shoeCounter==4){
+      shoe.src = "./assets/shoes/shoe5.PNG"
+    }
   }
 let backCounter=0
 let mouthCounter= 0
@@ -218,6 +308,7 @@ let skin=0;
 let pantCounter=0
 let hairColor=0
 let hairCounter=0
+let shoeCounter=0
 leftButton.addEventListener("click",function(){
   if(skin<1){
     skin=4
@@ -257,7 +348,7 @@ rightEye.addEventListener("click",function(){
 })
 leftShirt.addEventListener("click",function(){
   if(shirtCounter<1){
-    shirtCounter=6
+    shirtCounter=8
   }
   else {
     shirtCounter--
@@ -265,7 +356,7 @@ leftShirt.addEventListener("click",function(){
   renderShirt(shirtCounter)
 })
 rightShirt.addEventListener("click",function(){
-  if(shirtCounter>5){
+  if(shirtCounter>7){
     shirtCounter=0
   }
   else {
@@ -311,7 +402,7 @@ rightMouth.addEventListener("click",function(){
 })
 leftPant.addEventListener("click",function(){
   if(pantCounter<1){
-    pantCounter=5
+    pantCounter=6
   }
   else {
     pantCounter--
@@ -319,7 +410,7 @@ leftPant.addEventListener("click",function(){
   renderPant(pantCounter)
 })
 rightPant.addEventListener("click",function(){
-  if(pantCounter>4){
+  if(pantCounter>5){
     pantCounter=0
   }
   else {
@@ -364,7 +455,7 @@ else {
  })
  leftBackHair.addEventListener("click",function(){
   if(backCounter<1){
-    backCounter=3
+    backCounter=9
   renderBackHair(backCounter)
 }
 else {
@@ -373,12 +464,32 @@ else {
 }  
  })
  rightBackHair.addEventListener("click",function(){
-  if(backCounter>2){
+  if(backCounter>8){
     backCounter=0
   renderBackHair(backCounter)
 }
 else {
   backCounter++
   renderBackHair(backCounter)
+}  
+ })
+ leftShoe.addEventListener("click",function(){
+  if(shoeCounter<1){
+    shoeCounter=1
+  renderShoe(shoeCounter)
+}
+else {
+  shoeCounter--
+  renderShoe(shoeCounter)
+}  
+ })
+ rightShoe.addEventListener("click",function(){
+  if(shoeCounter>0){
+    shoeCounter=0
+  renderShoe(shoeCounter)
+}
+else {
+  shoeCounter++
+  renderShoe(shoeCounter)
 }  
  })
