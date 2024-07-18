@@ -85,6 +85,7 @@ function renderMouth(mouthCounter) {
 function renderShirt(shirtCounter) {
   if(shirtCounter==0){
     shirt.src = "./assets/clothes/shirt1.PNG"
+    console.log ('test')    
   }
   else if(shirtCounter==1){
     shirt.src = "./assets/clothes/shirt2.PNG"
