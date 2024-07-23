@@ -28,18 +28,33 @@ button{
   padding: 6px;
   font-family:'poppins';
   border-radius: 10px;
+  background-color:rgb(187, 206, 200);
+  transition: background-color 0.15s;
+  border-color: rgb(92, 114, 108);
+}
+button:hover{
+  background-color: rgb(138, 161, 154);;
 }
 #blonde {
   background-color: rgb(220, 216, 166);
   color: rgb(51, 39, 16);
 }
+#blonde:hover{
+  background-color: rgb(169, 166, 121);
+}
 #brown {
   background-color: rgb(59, 26, 8);
   color: rgb(128, 94, 75);
 }
+#brown:hover{
+  background-color: rgb(44, 19, 6);
+}
 #black {
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(34, 33, 33);
   color: rgb(126, 112, 106);
+}
+#black:hover{
+  background-color: rgb(0, 0, 0);
 }
 #everythingDiv{
   display: flex;

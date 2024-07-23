@@ -15,6 +15,8 @@ let black = document.querySelector('#black');
 let leftHair = document.querySelector('#leftHair');
 let rightHair = document.querySelector('#rightHair')
 let sock = document.querySelector('#socks');
+document.getElementById("eyebrow").style.visibility="hidden";
+document.getElementById('socks').style.visibility = "hidden";
 function render(skin) {
   if(skin==0){
     skinTone.src = "./assets/body/skin1.PNG"
@@ -34,12 +36,21 @@ function render(skin) {
 }
 function renderEyelash(eyelashCounter) {
   if(eyelashCounter==0){
+    eyelash.src = "./assets/eyelash/down2.PNG"
+  }
+  if(eyelashCounter==1){
     eyelash.src = "./assets/eyelash/down.PNG"
   }
-  else if(eyelashCounter==1){
+  else if(eyelashCounter==2){
     eyelash.src = "./assets/eyelash/middle.PNG"
   }
-  else if(eyelashCounter==2){
+  else if(eyelashCounter==3){
+    eyelash.src = "./assets/eyelash/middleUp.PNG"
+  }
+  else if(eyelashCounter==4){
+    eyelash.src = "./assets/eyelash/straight.PNG"
+  }
+  else if(eyelashCounter==5){
     eyelash.src = "./assets/eyelash/up.PNG"
   }
 }
@@ -63,12 +74,18 @@ function renderEye(eyeCounter) {
 function renderSock(sockCounter) {
   if(sockCounter==0){
     sock.src = "./assets/socks/sock1.PNG"
+    document.getElementById('socks').style.visibility = "hidden";
   }
   else if(sockCounter==1){
-    sock.src = "./assets/socks/sock2.PNG"
+    sock.src = "./assets/socks/sock1.PNG"
+    document.getElementById('socks').style.visibility = "visible";
   }
   else if(sockCounter==2){
+    sock.src = "./assets/socks/sock2.PNG"
+  }
+  else if(sockCounter==3){
     sock.src = "./assets/socks/sock3.PNG"
+    document.getElementById('socks').style.visibility = "visible";
   }
 }
 function renderMouth(mouthCounter) {
@@ -117,6 +134,27 @@ function renderShirt(shirtCounter) {
   else if(shirtCounter==10){
     shirt.src = "./assets/clothes/shirt11.PNG"
   }
+  else if(shirtCounter==11){
+    shirt.src = "./assets/clothes/shirt12.PNG"
+  }
+  else if(shirtCounter==12){
+    shirt.src = "./assets/clothes/shirt13.PNG"
+  }
+  else if(shirtCounter==13){
+    shirt.src = "./assets/clothes/shirt14.PNG"
+  }
+  else if(shirtCounter==14){
+    shirt.src = "./assets/clothes/shirt15.PNG"
+  }
+  else if(shirtCounter==15){
+    shirt.src = "./assets/clothes/shirt16.PNG"
+  }
+  else if(shirtCounter==16){
+    shirt.src = "./assets/clothes/shirt17.PNG"
+  }
+  else if(shirtCounter==17){
+    shirt.src = "./assets/clothes/shirt18.PNG"
+  }
 }
 function renderPant(pantCounter) {
   if(pantCounter==0){
@@ -139,6 +177,12 @@ function renderPant(pantCounter) {
   }
   else if(pantCounter==6){
     pant.src = "./assets/pants/pant7.PNG"
+  }
+  else if(pantCounter==7){
+    pant.src = "./assets/pants/pant8.PNG"
+  }
+  else if(pantCounter==8){
+    pant.src = "./assets/pants/pant9.PNG"
   }
   }
   function renderHair(hairCounter) {
@@ -311,6 +355,16 @@ function renderPant(pantCounter) {
         back.src = "./assets/back/s10c2.PNG"
       }
 }
+else if(backCounter==10){
+  if(hairColor==0){
+      back.src = "./assets/back/s11c0.PNG"
+    }
+  if(hairColor==1){
+      back.src = "./assets/back/s11c1.PNG"
+  }
+    if(hairColor==2){
+      back.src = "./assets/back/s11c2.PNG"
+  }}
   }
   function renderShoe(shoeCounter) {
     if(shoeCounter==0){
@@ -329,6 +383,45 @@ function renderPant(pantCounter) {
       shoe.src = "./assets/shoes/shoe5.PNG"
     }
   }
+  function renderEyebrow(eyebrowCounter) {
+    if(eyebrowCounter==0){
+ document.getElementById("eyebrow").style.visibility="hidden";
+  }
+    if(eyebrowCounter==1){
+      if(hairColor==0){
+        eyebrow.src = "./assets/eyebrow/down0.PNG"
+    }
+    else if(hairColor>0){
+      eyebrow.src = "./assets/eyebrow/down1.PNG"
+    }
+    document.getElementById("eyebrow").style.visibility="visible";
+  }
+  else if(eyebrowCounter==2){
+    if(hairColor==0){
+      eyebrow.src = "./assets/eyebrow/slightUp0.PNG"
+  }
+  else if(hairColor>0){
+    eyebrow.src = "./assets/eyebrow/slightUp1.PNG"
+  }
+}
+else if(eyebrowCounter==3){
+  if(hairColor==0){
+    eyebrow.src = "./assets/eyebrow/straight0.PNG"
+}
+else if(hairColor>0){
+  eyebrow.src = "./assets/eyebrow/straight1.PNG"
+}
+}
+else if(eyebrowCounter==4){
+  if(hairColor==0){
+    eyebrow.src = "./assets/eyebrow/up0.PNG"
+}
+else if(hairColor>0){
+  eyebrow.src = "./assets/eyebrow/up1.PNG"
+}
+document.getElementById("eyebrow").style.visibility="visible";
+}
+  }
 let backCounter=0
 let mouthCounter= 0
 let eyelashCounter=0
@@ -340,6 +433,7 @@ let hairColor=0
 let hairCounter=0
 let shoeCounter=0
 let sockCounter= 0
+let eyebrowCounter=0
 leftButton.addEventListener("click",function(){
   if(skin<1){
     skin=4
@@ -379,7 +473,7 @@ rightEye.addEventListener("click",function(){
 })
 leftShirt.addEventListener("click",function(){
   if(shirtCounter<1){
-    shirtCounter=10
+    shirtCounter=17
   }
   else {
     shirtCounter--
@@ -387,7 +481,7 @@ leftShirt.addEventListener("click",function(){
   renderShirt(shirtCounter)
 })
 rightShirt.addEventListener("click",function(){
-  if(shirtCounter>9){
+  if(shirtCounter>16){
     shirtCounter=0
   }
   else {
@@ -397,7 +491,7 @@ rightShirt.addEventListener("click",function(){
 })
 leftEyelash.addEventListener("click",function(){
   if(eyelashCounter<1){
-    eyelashCounter=2
+    eyelashCounter=5
   }
   else {
     eyelashCounter--
@@ -405,7 +499,7 @@ leftEyelash.addEventListener("click",function(){
   renderEyelash(eyelashCounter)
 })
 rightEyelash.addEventListener("click",function(){
-  if(eyelashCounter>1){
+  if(eyelashCounter>4){
     eyelashCounter=0
   }
   else {
@@ -433,7 +527,7 @@ rightMouth.addEventListener("click",function(){
 })
 leftPant.addEventListener("click",function(){
   if(pantCounter<1){
-    pantCounter=6
+    pantCounter=8
   }
   else {
     pantCounter--
@@ -441,7 +535,7 @@ leftPant.addEventListener("click",function(){
   renderPant(pantCounter)
 })
 rightPant.addEventListener("click",function(){
-  if(pantCounter>5){
+  if(pantCounter>7){
     pantCounter=0
   }
   else {
@@ -486,7 +580,7 @@ else {
  })
  leftBackHair.addEventListener("click",function(){
   if(backCounter<1){
-    backCounter=9
+    backCounter=10
   renderBackHair(backCounter)
 }
 else {
@@ -495,7 +589,7 @@ else {
 }  
  })
  rightBackHair.addEventListener("click",function(){
-  if(backCounter>8){
+  if(backCounter>9){
     backCounter=0
   renderBackHair(backCounter)
 }
@@ -526,20 +620,37 @@ else {
  })
  leftSock.addEventListener("click",function(){
   if(sockCounter<1){
-    sockCounter=2
+    sockCounter=3
   }
   else {
     sockCounter--
-    console.log('hi')
   }  
   renderSock(sockCounter)
 })
 rightSock.addEventListener("click",function(){
-  if(sockCounter>1){
+  if(sockCounter>2){
     sockCounter=0
   }
   else {
     sockCounter++
   }  
   renderSock(sockCounter)
+})
+leftEyebrow.addEventListener("click",function(){
+  if(eyebrowCounter<1){
+    eyebrowCounter=3
+  }
+  else {
+    eyebrowCounter--
+  }  
+  renderEyebrow(eyebrowCounter)
+})
+rightEyebrow.addEventListener("click",function(){
+  if(eyebrowCounter>2){
+    eyebrowCounter=0
+  }
+  else {
+    eyebrowCounter++
+  }  
+  renderEyebrow(eyebrowCounter)
 })
